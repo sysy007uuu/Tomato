@@ -1,0 +1,42 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/setting/setting"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e76868",
+    "navigationBarTextStyle": "white"
+
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#295DAA",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/homeselect.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "image/log.png",
+        "selectedIconPath": "image/logselect.png",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "iconPath": "image/option.png",
+        "selectedIconPath": "image/optionselect.png",
+        "text": "设置"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
