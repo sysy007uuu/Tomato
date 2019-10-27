@@ -1,0 +1,98 @@
+
+.header {
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #e0e0e0;
+  background-color: #c26767;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+}
+.header .add{
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+.header .mytodo{
+  flex: 1;
+  font-size: 28rpx;
+  color: #fff;
+}
+.container{
+  background-color: #e76868;
+  padding: 10rpx
+}
+
+.todos {
+  border: 1rpx solid #ffffff;
+  background-color: #c26767;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5 rpx #e0e0e0;
+}
+
+.todos .item{
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  border-bottom: 1rpx solid #ffffff;
+}
+
+.todos .item:last-child{
+  border-bottom: 0;
+}
+
+.todos .item .checkbox{
+  margin-right: 20rpx;
+  
+}
+
+.todos .item .name{
+  flex: 1;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+
+.todos .item.completed .name{
+  text-decoration: line-through;
+  color:#ffffff;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+}
+
+.empty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty .title{
+  font-size:60rpx;
+  margin: 200rpx 50rpx 50rpx;
+  color: #ffffff;
+}
+.empty .content{
+  color: #ffffff;
+  text-align: center;
+}
+.btn{
+  display: flex;
+  background-color:#c26767; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid #dedede;
+  height: 50rpx;
+  width: 180rpx;
+  color: #fff;
+}
+.left{
+  padding-top: 4px;
+}

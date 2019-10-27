@@ -1,30 +1,57 @@
 <view class="container">
+  <view class="section panel">
+    <text class="section_title">我的账户</text>
+      <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <block wx:else>
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+      </view>
+  </view>
 	<view class="section panel">
 	  <text class="section_title">工作时长(分钟)</text>
 	  <view class="section_body">
 	    <slider 
 	    	bindchange="changeWorkTime" 
-	    	show-value="true" 
+        activeColor="#BBBBBB"
 	    	min="1"
 	    	max="90"
 	    	value="{{workTime}}"
 	    	left-icon="cancel" 
-	    	right-icon="success_no_circle"/>
+	    	right-icon="success_no_circle"
+        bindchanging="changeWork"/>
+        <text class='work'>{{value2}}</text>
 	  </view>
 	</view>
-
 	<view class="section panel">
 	  <text class="section_title">休息时长(分钟)</text>
 	  <view class="section_body">
 	    <slider 
 	    	bindchange="changeRestTime" 
-	    	show-value="true" 
+        activeColor="#BBBBBB"
 	    	min="1"
 	    	max="60"
 	    	value="{{restTime}}"
+        value-style='color:#fff'
 	    	left-icon="cancel" 
-	    	right-icon="success_no_circle"/>
+	    	right-icon="success_no_circle"
+        bindchanging="changeRest"
+        ></slider>
+        <text class='rest'>{{value}}</text>
 	  </view>
 	</view>
-
+  <view class="clear" bindtap="switchModal">
+    清理本地缓存
+  </view>
+  <modal 
+		title="提示" 
+		confirm-text="确定" 
+		cancel-text="取消" 
+		hidden="{{modalHidden}}" 
+		bindconfirm="clearLog" 
+		bindcancel="switchModal"
+    >
+	    <text space="emsp">  是否清除记录？此操作不可恢复!</text>
+	</modal>
 </view>

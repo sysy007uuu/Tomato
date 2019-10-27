@@ -1,22 +1,63 @@
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
 .container{
 	padding:15px 10px;
+  background-color: #e76868;
 }
 .section{
 	margin-bottom: 10px;
+  
+  background-color: #c26767;
 }
 .section_title{
 	font-size: 12px;
-	color:#999;
+	color:#fff;
 }
 .section_check{
 	margin-right: 5px;
+  color: #fff;
 }
 .section_tip{
 	display: block;
 	text-align: right;
-	color: #CEC9C9;
+	color: #fff;
 	padding-bottom: 10px;
 }
 .section_body{
+  display: flex;
+  flex-direction: column;
 	margin-top: 15px;
+}
+
+.rest{
+  color: white;
+  text-align: center;
+}
+.work{
+  color: white;
+  text-align: center;
+}
+.clear{
+  display: flex;
+  justify-content: center;
+  background-color: #c26767;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  height: 100rpx
 }

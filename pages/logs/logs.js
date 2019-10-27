@@ -14,11 +14,19 @@ Page({
   set: function () {
 
   },
+
   getLogs: function () {
     let logs = wx.getStorageSync('logs')
-    logs.forEach(function (item, index, arry) {
-      item.startTime = new Date(item.startTime).toLocaleString()
-    })
+    for(var i = 0; i < logs.length; i++){
+      var date = new Date(logs[i].startTime)
+      var Y = date.getFullYear() + '年'
+      var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '月'
+      var D = date.getDate() + '日  '
+      var h = date.getHours() + ':'
+      var m = date.getMinutes() + ':'
+      var s = date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds()
+      logs[i].startTime = Y + M + D + h + m + s;
+    }
     this.setData({
       logs: logs
     })

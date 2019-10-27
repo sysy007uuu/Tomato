@@ -1,4 +1,5 @@
 const util = require('../../utils/util.js')
+const innerAudioContext = wx.createInnerAudioContext()
 const defaultLogName = {
   work: '工作',
   rest: '休息'
@@ -14,21 +15,22 @@ const initDeg = {
 }
 
 Page({
-
   data: {
+    playMusic: true,
     remainTimeText: '',
     timerType: 'work',
     log: {},
     completed: false,
     isRuning: false,
     leftDeg: initDeg.left,
-    rightDeg: initDeg.right
+    rightDeg: initDeg.right,
   },
-
+  
   onShow: function() {
     wx.setNavigationBarTitle({
       title:'我要吃番茄'
     })
+    
     if (this.data.isRuning) return
     let workTime = wx.getStorageSync('workTime')
     let restTime = wx.getStorageSync('restTime')
@@ -81,7 +83,8 @@ Page({
     let timerType = e.target.dataset.type
     let showTime = this.data[timerType + 'Time']
     let keepTime = showTime * 60 * 1000
-    let logName = this.logName || defaultLogName[timerType]
+    var app = getApp();
+    let logName = app.globalData.logName || defaultLogName[timerType]
 
     if (!isRuning) {
       this.timer = setInterval((function() {
@@ -172,7 +175,19 @@ Page({
       })
     }
   },
-
+  onMusicTap: function () {
+    if (this.data.playMusic){
+      innerAudioContext.play();
+    }else{
+      innerAudioContext.pause();
+    }
+    this.setData({
+      playMusic: !this.data.playMusic
+    })
+    innerAudioContext.src = 'https://746f-tomato-dbzni-1300441784.tcb.qcloud.la/%E6%B5%B7%E6%B5%AA.mp3?sign=14100f9e1f91262296608bfd4b74b937&t=1572157331'
+    innerAudioContext.loop = true;
+    
+  },
   changeLogName: function(e) {
     this.logName = e.detail.value
   },

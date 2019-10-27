@@ -1,33 +1,37 @@
 {
   "pages": [
-
     "pages/index/index",
+    "pages/todo/todo",
     "pages/logs/logs",
     "pages/setting/setting"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#e76868",
     "navigationBarTextStyle": "white"
-
   },
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#295DAA",
     "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#eee",
     "list": [
       {
         "pagePath": "pages/index/index",
         "iconPath": "image/home.png",
         "selectedIconPath": "image/homeselect.png",
-        "text": "主页"
+        "text": "番茄"
+      },
+      {
+        "pagePath": "pages/todo/todo",
+        "iconPath": "image/list.png",
+        "selectedIconPath": "image/listselect.png",
+        "text": "清单"
       },
       {
         "pagePath": "pages/logs/logs",
-        "iconPath": "image/log.png",
-        "selectedIconPath": "image/logselect.png",
+        "iconPath": "image/static.png",
+        "selectedIconPath": "image/staticselect.png",
         "text": "记录"
       },
       {
@@ -38,5 +42,8 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }
