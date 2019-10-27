@@ -1,13 +1,17 @@
+
 .container{
 	padding-bottom: 50px;
 	max-height: 92%;
+  background-color: #e76868;
 }
 .log {
 	color: #999;
 	margin: 15px 10px;
+  background-color: #c26767;
 }
 .log_item{
 	padding: 15px 5px;
+  color: #fff;
 }
 .log_item text {
 	padding-right: 20px;
@@ -23,7 +27,11 @@
 	height: 35px;
 	line-height: 35px;
 	color:#fff;
-	background-color: #fd8f58;
+	background-color: #c26767;
 	border-radius: 2px;
   width: 80%;
+}
+
+.nodata{
+  background-color: #e76868;
 }

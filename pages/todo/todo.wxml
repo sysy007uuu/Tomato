@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <image class="add" src="../../image/add.png" bindtap='addTodoHandle'></image> <!--输入框 -->
+    <input class="mytodo" value="{{input}}" placeholder-style='color:#ccc' placeholder="输入待办事项" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input>
+  </view>
+  <block wx:if="{{ todos.length}}">
+    <view class="todos">
+      <view class="item{{item.completed ? ' completed' : ''}}" wx:for="{{todos}}" wx:key="{{index}}" >
+        <icon class="checkbox" color="#fff" type="{{ item.completed ? 'success' : 'circle'}}" bindtap="toggleTodoHandle" data-index="{{index}}"></icon> 
+        <text class="name" bindtap="changeWorkName" data-index="{{index}}">{{item.name}}(点击开始任务)</text>
+        <icon class="romeve" color="#fff" type="clear" size="16" catchtap="removeTodoHandle" data-index="{{index}}"></icon>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="btn" bindtap="toggleAllHandle">完成所有</view>
+      <text class="left" wx:if="{{ leftCount }}">剩余事件:{{ leftCount }} </text>
+      <view class="btn"  bindtap="clearCompletedHandle">清除已完成</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">恭喜你</text>
+      <text class="content">现在已经没有剩余任务了</text>
+    </view>
+  </block>
+</view>

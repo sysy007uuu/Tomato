@@ -1,4 +1,7 @@
 <view class="container timer {{isRuning ? 'timer--runing': ''}}">
+  <view class="play">
+  <image class="playimage" src="{{playMusic? '../../image/play.png' : '../../image/stop.png'}} " bindtap="onMusicTap"></image>
+  </view>
 	<view class="timer_main">
 		 <view class="timer_time-wrap">
 		 		<view class="timer_progress_mask"></view>
@@ -18,12 +21,7 @@
 		 			class="timer_done" 
 		 			src="../../image/complete.png"></image>
 		 </view>
-		 <input 
-		 	type="text" 
-		 	placeholder-style="text-align:center" 
-		 	class="timer_inputname" 
-		 	bindinput="changeLogName"
-		 	placeholder="在此输入任务名"/>
+
 	</view>
 	
 	<view class="timer_footer">
